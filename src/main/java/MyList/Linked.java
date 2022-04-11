@@ -1,6 +1,7 @@
 package MyList;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Linked<E> {
     private Node<E> head;
@@ -64,7 +65,7 @@ public class Linked<E> {
 
     public E get(int index) {
 
-        if (size > 0 && index <= size) {
+        if (size >= 0 && index <= size) {
             Node<E> x = head;
             for (int i = 0; i < index; i++) {
                 x = x.next;
@@ -81,7 +82,7 @@ public class Linked<E> {
 
         if (o == null) {
             for (Node<E> x = head; x != null; x = x.next) {
-                if (x.e == null)
+                if (Objects.equals(x.e, o))
                     return index;
                 index++;
             }

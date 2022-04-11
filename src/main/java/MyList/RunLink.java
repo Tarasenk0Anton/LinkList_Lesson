@@ -1,17 +1,34 @@
 package MyList;
 
-import java.util.LinkedList;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class RunLink {
-    public static void main(String[] args) {
-        Linked<Integer> myLink = new Linked();
-        myLink.add(1);
-        myLink.add(2);
-        myLink.add(3);
-        myLink.add(5, 1);
+    public static void main(String[] args) throws Exception {
+        MyArray<Integer> myArr = new MyArray<>();
+        for (int i = 0; i < 21; i++) {
+            myArr.add(i);
+        }
 
-        System.out.println(myLink.get(0));
-        System.out.println(myLink.indexOf(3));
+        System.out.println("Size - " + myArr.size);
+        myArr.add(124, 1);
+        System.out.println("Size - " + myArr.size);
+        System.out.println(myArr.get(1));
+        myArr.set(232, 0);
+        System.out.println(myArr.get(2));
 
+        myArr.remove(150);
+        System.out.println("Size - " + myArr.size);
+        System.out.println(myArr.get(1));
+
+        /*
+        int[] arr = {1,2,3,4,5,6,7,8,9};
+        int index = 2;
+        int[] nArr =new int[arr.length];
+        System.arraycopy(arr, index + 1, arr, index, arr.length - index - 1);
+        System.out.println(Arrays.toString(arr));
+        */
     }
+
+
 }

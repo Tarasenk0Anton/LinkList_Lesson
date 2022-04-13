@@ -55,8 +55,18 @@ public class MyArray<E> {
         element = new Object[ARRAY_CAPACITY];
     }
 
-    public Object get(int index) throws Exception {
+    public Object get(int index) {
 
+        Object value;
+        try {
+            value = element[index];
+        }catch (ArrayIndexOutOfBoundsException e){
+            throw new MyCustomException(index);
+        }
+
+        if (index <= 0 || index > element.length){
+            throw new MyCustomException(index);
+        }
         /*
         try {
             return element[index];
@@ -64,7 +74,7 @@ public class MyArray<E> {
             return null;
         }
         */
-        return element[index];
+        return value;
 
     }
 
@@ -89,6 +99,8 @@ public class MyArray<E> {
         }catch (ArrayIndexOutOfBoundsException err){
 
         }
+
+
 
     }
 

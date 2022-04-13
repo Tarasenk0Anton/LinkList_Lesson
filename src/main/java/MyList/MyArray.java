@@ -57,11 +57,14 @@ public class MyArray<E> {
 
     public Object get(int index) throws Exception {
 
+        /*
         try {
             return element[index];
         } catch (ArrayIndexOutOfBoundsException e) {
             return null;
         }
+        */
+        return element[index];
 
     }
 

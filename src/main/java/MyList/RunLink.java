@@ -1,8 +1,5 @@
 package MyList;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class RunLink {
     public static void main(String[] args) throws Exception {
         MyArray<Integer> myArr = new MyArray<>();
@@ -13,7 +10,13 @@ public class RunLink {
         System.out.println("Size - " + myArr.size);
         myArr.add(124, 1);
         System.out.println("Size - " + myArr.size);
-        System.out.println(myArr.get(1));
+
+        try {
+            System.out.println(myArr.get(-1));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("incorrect index");
+        }
+
         myArr.set(232, 0);
         System.out.println(myArr.get(2));
 
